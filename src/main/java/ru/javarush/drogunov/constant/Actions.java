@@ -1,4 +1,4 @@
-package constant;
+package ru.javarush.drogunov.constant;
 
 /*
  * Действия, которые умеет программа

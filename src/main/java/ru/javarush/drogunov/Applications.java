@@ -1,6 +1,8 @@
-import controllers.MainController;
-import enity.Result;
-import exceptions.AppExceptions;
+package ru.javarush.drogunov;
+
+import ru.javarush.drogunov.controllers.MainController;
+import ru.javarush.drogunov.enity.Result;
+import ru.javarush.drogunov.exceptions.AppExceptions;
 import java.util.Arrays;
 
 /*

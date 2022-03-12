@@ -1,4 +1,4 @@
-package constant;
+package ru.javarush.drogunov.constant;
 
 /*
 * Константы приложения используемые для проверки текста и смещения

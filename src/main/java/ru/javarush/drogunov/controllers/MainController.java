@@ -1,10 +1,10 @@
-package controllers;
+package ru.javarush.drogunov.controllers;
 
-import commands.Decoder;
-import commands.Encoder;
-import constant.Actions;
-import enity.Result;
-import exceptions.UncorrectedActionsExceptions;
+import ru.javarush.drogunov.commands.Decoder;
+import ru.javarush.drogunov.commands.Encoder;
+import ru.javarush.drogunov.constant.Actions;
+import ru.javarush.drogunov.enity.Result;
+import ru.javarush.drogunov.exceptions.UncorrectedActionsExceptions;
 
 
 /*

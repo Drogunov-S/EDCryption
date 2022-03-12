@@ -1,6 +1,6 @@
-package commands;
+package ru.javarush.drogunov.commands;
 
-import enity.Result;
+import ru.javarush.drogunov.enity.Result;
 
 public class Encoder implements Action {
     @Override

@@ -8,7 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
-public class ReadFile {
+public class InputCharArrays {
+
+
 
     public static char[] read(String path) {
         char[] charFileToArray = null;
