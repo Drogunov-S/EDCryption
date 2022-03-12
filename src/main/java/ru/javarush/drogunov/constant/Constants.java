@@ -17,5 +17,6 @@ public class Constants {
     public static final String RUS = ALPHABET_RUS + ALPHABET_RUS.toLowerCase();
 
 
+    public static final String ALL = SYMBOLS + ALPHABET_ENG + ALPHABET_RUS;
 
 }
