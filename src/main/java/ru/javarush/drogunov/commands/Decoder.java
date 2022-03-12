@@ -30,3 +30,4 @@ public class Decoder implements Action {
     }
 
 }
+//realise class Result, Decoder. Rename class name in package input.
