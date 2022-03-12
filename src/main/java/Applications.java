@@ -3,6 +3,10 @@ import enity.Result;
 import exceptions.AppExceptions;
 import java.util.Arrays;
 
+/*
+* Запуск приложения если String[] args > 0; (19)
+* */
+
 public class Applications {
     private final MainController mainController;
 
@@ -17,7 +21,7 @@ public class Applications {
             String[] parameters = Arrays.copyOfRange(args, 1, args.length);
             return mainController.doAction(action, parameters);
         }
-        throw new AppExceptions();
+        throw new AppExceptions("Ошибка в водимых данных (Input error)");
 
 
     }
