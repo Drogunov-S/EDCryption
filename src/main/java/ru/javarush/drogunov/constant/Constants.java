@@ -21,7 +21,7 @@ public class Constants {
 
     public static final String ALL = SYMBOLS + ALPHABET_ENG + ALPHABET_RUS;
 
-
+    //Не забыть занести путь в константы
 
     public static ArrayList<Character> listCharsAlphabet(String... constants) {
         ArrayList<Character> allChars = new ArrayList<>();

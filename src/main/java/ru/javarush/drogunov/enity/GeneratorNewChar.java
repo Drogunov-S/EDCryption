@@ -1,11 +1,9 @@
 package ru.javarush.drogunov.enity;
 
 import ru.javarush.drogunov.constant.Constants;
-
 import java.util.ArrayList;
 
 public class GeneratorNewChar {
-
 
     public static char getNewChar(char oldChar, String parameterKey) {
         ArrayList<Character> alphabet = Constants.listCharsAlphabet(Constants.RUS, Constants.ENG, Constants.SYMBOLS);
@@ -17,12 +15,10 @@ public class GeneratorNewChar {
         int indexOldChar = alphabet.indexOf(oldChar);
         int indexNewChar = NewIndex.get(parameterKey, indexOldChar, alphabet.size());
 
-
         return alphabet.get(indexNewChar);
     }
 
     private static class NewIndex {
-        // old 118 new 6 || old 118 new 6 ||  old 6 new 106
 
         public static int get(String parameterKey, int indexOldChar, int alphabetSize) {
             int key = Integer.parseInt(parameterKey);
@@ -35,10 +31,6 @@ public class GeneratorNewChar {
 
         }
 
-        //K eng - 76
-        //112+76 > 148
-        //112 + 76 - 148
-        // == 40 а факт 36
 
         private static int getPositive(int key, int indexOldChar, int alphabetSize) {
             if (key >= alphabetSize) {
@@ -57,9 +49,7 @@ public class GeneratorNewChar {
                 key %= alphabetSize;
             }
 
-            int newIndexChar = Math.abs(((key + indexOldChar) + alphabetSize) % alphabetSize);
-
-            return newIndexChar == alphabetSize ? indexOldChar : newIndexChar;
+            return Math.abs(((key + indexOldChar) + alphabetSize) % alphabetSize);
 
 
         }
