@@ -10,6 +10,13 @@ public class ConsoleRunner {
 
         System.out.println(result.getResult().toString());
 
+        args[3] = "-2";
+
+        Result result1 = applications.run(args);
+
+        System.out.println(result1.getResult().toString());
+
+
     }
 
 

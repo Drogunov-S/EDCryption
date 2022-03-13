@@ -28,19 +28,39 @@ public class Decoder implements Action {
         ArrayList<Character> alphabet = Constants
                 .listCharsAlphabet(Constants.ENG, Constants.RUS, Constants.
                         SYMBOLS);
-        int key = Integer.parseInt(parameterKey);
-        int indexOldChar = alphabet.indexOf(oldChar);
-        int indexNewChar = 0;
-        if (key > alphabet.size()) {
-            key %= alphabet.size();
-        }
-        if (key + indexOldChar > alphabet.size()) {
-            indexNewChar = (key + indexOldChar) - alphabet.size();
+
+        if (!alphabet.contains(oldChar)) {
+            return oldChar;
         }
 
+        int indexOldChar = alphabet.indexOf(oldChar);
+        int indexNewChar = getIndexNewChar(parameterKey, indexOldChar, alphabet.size());
+
+
+        /*if (key + indexOldChar > alphabet.size()) {
+            indexNewChar = (key + indexOldChar) - alphabet.size();
             return alphabet.get(indexNewChar);
+        }*/
+        /*indexNewChar = indexOldChar + key;*/
+
+        return alphabet.get(indexNewChar);
         //Вариант 1, но проблемы с проверкой чара в конце константы и при больших ключах
-        //return ALL.charAt(ALL.indexOf(ALL.indexOf(oldChar) + Integer.parseInt(parametrKey)));
+        //return ALL.charAt(ALL.indexOf(ALL.indexOf(oldChar) + Integer.parseInt(parameterKey)));
+    }
+
+    private int getIndexNewChar(String parameterKey, int indexOldChar, int alphabetSize) {
+        int key = Integer.parseInt(parameterKey);
+
+        if (key > alphabetSize) {
+            key %= alphabetSize;
+        }
+
+        if (key + indexOldChar > alphabetSize) {
+            return (key + indexOldChar) - alphabetSize;
+        }
+
+        return key + indexOldChar;
+
     }
 
 

@@ -35,8 +35,14 @@ public class DataInput {
             e.printStackTrace();
             //написать и бросить исключение!!!!!!!
         }
+        //Testing code
+        /*System.out.println("old text" + "\n--------------------------------------------------------");
 
-
+        for (char c : charFileToArray) {
+            System.out.print(c);
+        }
+        System.out.println("--------------------------------------------------------");*/
+        //Testing code
 
         return charFileToArray;
     }
