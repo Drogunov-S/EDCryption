@@ -33,6 +33,7 @@ public class DataInput {
             charFileToArray = new String(buffer.array(), StandardCharsets.UTF_8).toCharArray();
         } catch (IOException e) {
             e.printStackTrace();
+            //написать и бросить исключение!!!!!!!
         }
 
 

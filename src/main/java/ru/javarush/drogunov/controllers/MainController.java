@@ -17,17 +17,19 @@ public class MainController {
         if (action == null) {
             throw new UncorrectedActionsExceptions("Введена пустая строка");
         }
+        Result result = null;
 
+        //Сделать ретурн красивее при помощи свитча
         try {
             switch (Actions.valueOf(action.toUpperCase())) {
-                case DECODER -> new Decoder().execute(parameters);
-                case ENCODER -> new Encoder().execute(parameters);
+                case DECODER -> result = new Decoder().execute(parameters);
+                case ENCODER -> result = new Encoder().execute(parameters);
             }
         } catch (IllegalArgumentException e) {
             throw new UncorrectedActionsExceptions("Неизвестная команда", e);
         }
 
         //Не пойму почему все равно требует return? и как сделать что бы его не требовало?
-        return null;
+        return result;
     }
 }
