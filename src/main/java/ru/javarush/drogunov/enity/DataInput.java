@@ -1,4 +1,4 @@
-package ru.javarush.drogunov.input;
+package ru.javarush.drogunov.enity;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 
 /*
 * Класс из потока создает массив чаров и возвращает его
@@ -14,14 +15,17 @@ import java.nio.file.StandardOpenOption;
 * */
 
 
-public class InputStreamToCharArray {
+public class DataInput {
+
+
 
 
 
     public static char[] read(String path) {
         char[] charFileToArray = null;
         //Не забыть перенести в константы
-        Path path3 = Path.of("D:\\file2.txt");
+        //Path path3 = Path.of("D:\\file2.txt");
+        Path path3 = Path.of(path);
 
         try (FileChannel fileChannel = FileChannel.open(path3, StandardOpenOption.READ, StandardOpenOption.WRITE)) {
             ByteBuffer buffer = ByteBuffer.allocate((int) Files.size(path3));
@@ -32,6 +36,18 @@ public class InputStreamToCharArray {
         }
 
 
+
         return charFileToArray;
     }
+
+//Метод не используется
+    /*private static ArrayList<Character> ArrayCharToArrayList(char[] array) {
+        ArrayList<Character> arrayList = new ArrayList<>();
+
+        for (char c : array) {
+            arrayList.add(c);
+        }
+
+        return arrayList;
+    }*/
 }

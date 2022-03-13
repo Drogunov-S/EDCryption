@@ -5,6 +5,8 @@ package ru.javarush.drogunov.constant;
 *
 * */
 
+import java.util.ArrayList;
+
 public class Constants {
     private static final String TASK_SYMBOLS = " .,”:-!?";
     private static final String MORE_SYMBOLS = "@#$%^&*()-_+={}[];\"<>`";
@@ -19,4 +21,17 @@ public class Constants {
 
     public static final String ALL = SYMBOLS + ALPHABET_ENG + ALPHABET_RUS;
 
+
+
+    public static ArrayList<Character> listCharsAlphabet(String... constants) {
+        ArrayList<Character> allChars = new ArrayList<>();
+
+        for (String str : constants) {
+            for (int i = 0; i < str.length(); i++) {
+                allChars.add(str.charAt(i));
+            }
+        }
+
+        return allChars;
+    }
 }
