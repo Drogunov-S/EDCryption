@@ -10,16 +10,12 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 /*
-* Класс из потока создает массив чаров и возвращает его
-*
-* */
+ * Класс из потока создает массив чаров и возвращает его
+ *
+ * */
 
 
 public class DataInput {
-
-
-
-
 
     public static char[] read(String path) {
         char[] charFileToArray = null;
@@ -35,14 +31,6 @@ public class DataInput {
             e.printStackTrace();
             //написать и бросить исключение!!!!!!!
         }
-        //Testing code
-        /*System.out.println("old text" + "\n--------------------------------------------------------");
-
-        for (char c : charFileToArray) {
-            System.out.print(c);
-        }
-        System.out.println("--------------------------------------------------------");*/
-        //Testing code
 
         return charFileToArray;
     }
