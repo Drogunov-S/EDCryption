@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class Constants {
     private static final String TASK_SYMBOLS = " .,”:-!?";
-    private static final String MORE_SYMBOLS = "@#$%^&*()-_+={}[];\"<>`";
+    private static final String MORE_SYMBOLS = "@#$%^&*()_+={}[];\"<>`";
     public static final String SYMBOLS = TASK_SYMBOLS + MORE_SYMBOLS;
 
     private static final String ALPHABET_ENG = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -21,7 +21,7 @@ public class Constants {
 
     public static final String ALL = SYMBOLS + ALPHABET_ENG + ALPHABET_RUS;
 
-    //Не забыть занести путь в константы
+    //TODO Не забыть занести путь в константы
 
     public static ArrayList<Character> listCharsAlphabet(String... constants) {
         ArrayList<Character> allChars = new ArrayList<>();

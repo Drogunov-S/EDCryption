@@ -1,14 +1,22 @@
 package ru.javarush.drogunov.enity;
 
 public class Result {
-    private final StringBuilder stringBuilder;
 
-    public Result(StringBuilder result) {
-        this.stringBuilder = result;
+    private final String massage;
 
+    private final ResultCode resultCode;
+
+
+    public Result(String massage, ResultCode resultCode) {
+        this.massage = massage;
+        this.resultCode = resultCode;
     }
 
-    public StringBuilder getResult() {
-        return stringBuilder;
+    @Override
+    public String toString() {
+        return "Result{" +
+                "massage='" + massage + '\'' +
+                ", resultCode=" + resultCode +
+                '}';
     }
 }

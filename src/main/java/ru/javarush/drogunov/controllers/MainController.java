@@ -1,10 +1,7 @@
 package ru.javarush.drogunov.controllers;
 
-import ru.javarush.drogunov.commands.Decoder;
-import ru.javarush.drogunov.commands.Encoder;
-import ru.javarush.drogunov.constant.Actions;
+import ru.javarush.drogunov.commands.Action;
 import ru.javarush.drogunov.enity.Result;
-import ru.javarush.drogunov.exceptions.UncorrectedActionsExceptions;
 
 
 /*
@@ -13,8 +10,14 @@ import ru.javarush.drogunov.exceptions.UncorrectedActionsExceptions;
 * */
 
 public class MainController {
-    public Result doAction(String action, String[] parameters) {
-        if (action == null) {
+    public Result doAction(String actionName, String[] parameters) {
+
+    Action action = Actions.find(actionName);
+    return action.execute(parameters);
+
+
+      //Старый код до лекции 15.03.2022
+       /* if (action == null) {
             throw new UncorrectedActionsExceptions("Введена пустая строка");
         }
         Result result = null;
@@ -30,6 +33,6 @@ public class MainController {
         }
 
         //Не пойму почему все равно требует return? и как сделать что бы его не требовало?
-        return result;
+        return result;*/
     }
 }

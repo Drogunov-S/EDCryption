@@ -17,6 +17,12 @@ import java.util.ArrayList;
 
 public class DataInput {
 
+    private Path path;
+//Проход названия файла
+    public DataInput(String fileName) {
+
+    }
+
     public static char[] read(String path) {
         char[] charFileToArray = null;
         //Не забыть перенести в константы
