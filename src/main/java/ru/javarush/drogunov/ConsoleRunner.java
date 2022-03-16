@@ -1,13 +1,17 @@
 package ru.javarush.drogunov;
 
-import ru.javarush.drogunov.enity.DataOutput;
+import ru.javarush.drogunov.data.DataInput;
 import ru.javarush.drogunov.enity.Result;
+
+import static ru.javarush.drogunov.constant.Constants.TOP_WORDS;
 
 public class ConsoleRunner {
 
     public static void main(String[] args) {
 
-//        System.out.println(-1000 % 148);
+        System.out.println(DataInput.readToHashSet(TOP_WORDS.toAbsolutePath()));
+
+        /*
         long timeStart = System.nanoTime();
 
         Applications applications = new Applications();
@@ -17,14 +21,7 @@ public class ConsoleRunner {
         System.out.println((timeEnd - timeStart) / 10_000_000);
         System.out.println(result.toString());
 
-        /*System.out.println(result.getResult().toString());
-
-        args[0] = "Encoder";
-        args[3] = "-1000";
-
-        Result result1 = applications.run(args);
-
-        System.out.println(result1.getResult().toString());*/
+       */
 
 
     }

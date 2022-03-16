@@ -1,13 +1,17 @@
-package ru.javarush.drogunov.enity;
+package ru.javarush.drogunov.data;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /*
  * Класс из потока создает массив чаров и возвращает его
@@ -41,14 +45,23 @@ public class DataInput {
         return charFileToArray;
     }
 
-//Метод не используется
-    /*private static ArrayList<Character> ArrayCharToArrayList(char[] array) {
-        ArrayList<Character> arrayList = new ArrayList<>();
 
-        for (char c : array) {
-            arrayList.add(c);
+    public static HashSet<String> readToHashSet(Path path) {
+        HashSet<String> topWord = new HashSet<>();
+
+
+        try (BufferedReader readerWords = new BufferedReader(new InputStreamReader(new FileInputStream(path.toFile())))) {
+
+            while (readerWords.ready()) {
+                topWord.add(readerWords.readLine());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            //написать и бросить исключение!!!!!!!
         }
 
-        return arrayList;
-    }*/
+        return topWord;
+
+    }
 }

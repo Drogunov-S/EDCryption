@@ -1,4 +1,4 @@
-package ru.javarush.drogunov.enity;
+package ru.javarush.drogunov.data;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

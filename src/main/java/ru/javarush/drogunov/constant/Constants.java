@@ -5,6 +5,7 @@ package ru.javarush.drogunov.constant;
 *
 * */
 
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Constants {
@@ -18,8 +19,9 @@ public class Constants {
     private static final String ALPHABET_RUS = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
     public static final String RUS = ALPHABET_RUS + ALPHABET_RUS.toLowerCase();
 
-
     public static final String ALL = SYMBOLS + ALPHABET_ENG + ALPHABET_RUS;
+
+    public static final Path TOP_WORDS = Path.of("src\\main\\java\\ru\\javarush\\drogunov\\analyzers\\TopRusWords.txt").toAbsolutePath();
 
     //TODO Не забыть занести путь в константы
 
