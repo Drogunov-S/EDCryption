@@ -12,7 +12,7 @@ public class Encoder implements Action {
         parameters[2] = String.valueOf(key * -1);
 
         char[] dataInput = DataInput.read(parameters[0]);
-        StringBuilder outputText = CharacterOffset.rearrange(dataInput ,parameters);
+        StringBuilder outputText = CharacterOffset.rearrange(dataInput ,parameters[2]);
         DataOutput dataOutput = new DataOutput(parameters[1]);
         dataOutput.write(outputText);
 

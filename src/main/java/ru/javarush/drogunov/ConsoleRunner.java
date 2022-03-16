@@ -9,9 +9,8 @@ public class ConsoleRunner {
 
     public static void main(String[] args) {
 
-        System.out.println(DataInput.readToHashSet(TOP_WORDS.toAbsolutePath()));
+//        System.out.println(DataInput.readToHashSet(TOP_WORDS.toAbsolutePath()));
 
-        /*
         long timeStart = System.nanoTime();
 
         Applications applications = new Applications();
@@ -21,7 +20,6 @@ public class ConsoleRunner {
         System.out.println((timeEnd - timeStart) / 10_000_000);
         System.out.println(result.toString());
 
-       */
 
 
     }

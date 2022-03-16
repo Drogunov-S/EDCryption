@@ -10,9 +10,9 @@ public class Decoder implements Action {
     @Override
     public Result execute(String[] parameters) {
         //TODO Дописать объект дата
-        //TODO Как убрать дублирование куда в Encoder
+        //TODO Как убрать дублирование кода в Encoder
         char[] dataInput = DataInput.read(parameters[0]);
-        StringBuilder outputText = CharacterOffset.rearrange(dataInput ,parameters);
+        StringBuilder outputText = CharacterOffset.rearrange(dataInput ,parameters[2]);
         DataOutput dataOutput = new DataOutput(parameters[1]);
         dataOutput.write(outputText);
 

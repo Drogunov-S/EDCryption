@@ -5,23 +5,36 @@ import java.util.ArrayList;
 
 public class GeneratorNewChar {
 
-    public static char getNewChar(char oldChar, String parameterKey) {
-        ArrayList<Character> alphabet = Constants.listCharsAlphabet(Constants.RUS, Constants.ENG, Constants.SYMBOLS);
+    public static char getNewChar(char oldChar, String key, ArrayList<Character> alphabet) {
+        int keyInt = Integer.parseInt(key);
 
         if (!alphabet.contains(oldChar)) {
             return oldChar;
         }
 
         int indexOldChar = alphabet.indexOf(oldChar);
-        int indexNewChar = NewIndex.get(parameterKey, indexOldChar, alphabet.size());
+        int indexNewChar = NewIndex.get(keyInt, indexOldChar, alphabet.size());
 
         return alphabet.get(indexNewChar);
     }
 
+    public static char getNewChar(char oldChar, int key, ArrayList<Character> alphabet) {
+
+
+        if (!alphabet.contains(oldChar)) {
+            return oldChar;
+        }
+
+        int indexOldChar = alphabet.indexOf(oldChar);
+        int indexNewChar = NewIndex.get(key, indexOldChar, alphabet.size());
+
+        return alphabet.get(indexNewChar);
+    }
+
+
     private static class NewIndex {
 
-        public static int get(String parameterKey, int indexOldChar, int alphabetSize) {
-            int key = Integer.parseInt(parameterKey);
+        public static int get(int key, int indexOldChar, int alphabetSize) {
 
             if (key > 0) {
                 return getPositive(key, indexOldChar, alphabetSize);

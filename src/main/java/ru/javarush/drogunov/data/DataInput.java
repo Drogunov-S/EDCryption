@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 /*
@@ -22,7 +22,8 @@ import java.util.HashSet;
 public class DataInput {
 
     private Path path;
-//Проход названия файла
+
+    //Проход названия файла
     public DataInput(String fileName) {
 
     }
@@ -62,6 +63,23 @@ public class DataInput {
         }
 
         return topWord;
+    }
 
+    public static ArrayList<String> readToArrayList(Path path) {
+        ArrayList<String> topWord = new ArrayList<>();
+
+
+        try (BufferedReader readerWords = new BufferedReader(new InputStreamReader(new FileInputStream(path.toFile())))) {
+
+            while (readerWords.ready()) {
+                topWord.add(readerWords.readLine());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            //написать и бросить исключение!!!!!!!
+        }
+
+        return topWord;
     }
 }

@@ -1,15 +1,29 @@
 package ru.javarush.drogunov.enity;
 
+import ru.javarush.drogunov.constant.Constants;
+
 public class CharacterOffset {
 
 
-    public static StringBuilder rearrange(char[] dataInput,String[] parameters) {
+    public static StringBuilder rearrange(char[] dataInput,String key) {
         StringBuilder outputText = new StringBuilder();
 
         for (char c : dataInput) {
-            outputText.append(GeneratorNewChar.getNewChar(c, parameters[2]));
+            outputText.append(GeneratorNewChar.getNewChar(c, key, Constants.listCharsAlphabet(Constants.RUS, Constants.ENG, Constants.SYMBOLS)));
         }
 
         return outputText;
     }
+
+    public static StringBuilder rearrange(char[] dataInput,int key) {
+        StringBuilder outputText = new StringBuilder();
+
+        for (char c : dataInput) {
+            outputText.append(GeneratorNewChar.getNewChar(c, key, Constants.listCharsAlphabet(Constants.RUS, Constants.ENG, Constants.SYMBOLS)));
+        }
+
+        return outputText;
+    }
+
+
 }
