@@ -9,7 +9,7 @@ public class CharacterOffset {
         StringBuilder outputText = new StringBuilder();
 
         for (char c : dataInput) {
-            outputText.append(GeneratorNewChar.getNewChar(c, key, Constants.listCharsAlphabet(Constants.RUS, Constants.ENG, Constants.SYMBOLS)));
+            outputText.append(GeneratorNewChar.getNewChar(c, key, Constants.listCharsAlphabet(Constants.ALL)));
         }
 
         return outputText;
@@ -19,7 +19,7 @@ public class CharacterOffset {
         StringBuilder outputText = new StringBuilder();
 
         for (char c : dataInput) {
-            outputText.append(GeneratorNewChar.getNewChar(c, key, Constants.listCharsAlphabet(Constants.RUS, Constants.ENG, Constants.SYMBOLS)));
+            outputText.append(GeneratorNewChar.getNewChar(c, key, Constants.listCharsAlphabet(Constants.ALL)));
         }
 
         return outputText;

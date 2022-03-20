@@ -8,17 +8,15 @@ package ru.javarush.drogunov.controllers;
  * STATISTICS_METHOD - взломать методом статистического анализа
  * */
 
-import ru.javarush.drogunov.commands.Action;
-import ru.javarush.drogunov.commands.BruteForce;
-import ru.javarush.drogunov.commands.Decoder;
-import ru.javarush.drogunov.commands.Encoder;
+import ru.javarush.drogunov.commands.*;
 import ru.javarush.drogunov.exceptions.AppExceptions;
 
 public enum Actions {
-    DECODER(new Decoder()),
-    ENCODER(new Encoder()),
+    EXIT(new Exit()),
+    DECODE(new Decode()),
+    ENCODE(new Encode()),
     BRUTE_FORCE(new BruteForce()),
-    /*STATISTICS_METHOD*/;
+    STATISTICS_METHOD(new StatisticsMethod());
 
     private final Action action;
 
@@ -27,11 +25,16 @@ public enum Actions {
     }
 
     public static Action find(String actionName) {
+        //TODO Реализовать проверку написания BruteForce
         try {
             Actions value = Actions.valueOf((actionName.toUpperCase()));
             return value.action;
         } catch (IllegalArgumentException e) {
             throw new AppExceptions("Некорректный ввод команды");
         }
+    }
+    public static String find(int numberCommand) {
+        Actions value = Actions.values()[numberCommand];
+        return value.toString();
     }
 }

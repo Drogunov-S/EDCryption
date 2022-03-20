@@ -5,10 +5,12 @@ package ru.javarush.drogunov.constant;
 *
 * */
 
+import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class Constants {
+
     private static final String TASK_SYMBOLS = " .,”:-!?";
     private static final String MORE_SYMBOLS = "@#$%^&*()_+={}[];\"<>`";
     public static final String SYMBOLS = TASK_SYMBOLS + MORE_SYMBOLS;
@@ -19,9 +21,44 @@ public class Constants {
     private static final String ALPHABET_RUS = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
     public static final String RUS = ALPHABET_RUS + ALPHABET_RUS.toLowerCase();
 
-    public static final String ALL = SYMBOLS + ALPHABET_ENG + ALPHABET_RUS;
+    public static final String ALL = RUS + ENG + SYMBOLS;
+    public static final int SIZE_ALL = ALL.length();
+    //TODO Как сделать динамическую ссылку, а то из-за того что переместил файл TopRusWord путь сломался
+    public static final Path TOP_WORDS = Path.of("src"+
+            File.separator+
+            "main"+
+            File.separator+
+            "java"+
+            File.separator+
+            "ru"+
+            File.separator+
+            "javarush"+
+            File.separator+
+            "drogunov"+
+            File.separator+
+            "analysis"+
+            File.separator+
+            "positions"+
+            File.separator+
+            "TopRusWords.txt")
+            .toAbsolutePath();
 
-    public static final Path TOP_WORDS = Path.of("src\\main\\java\\ru\\javarush\\drogunov\\analyzers\\TopRusWords.txt").toAbsolutePath();
+    public static final String TXT_FOLDER=System.getProperty("user.dir")+
+            File.separator+
+            "src"+
+            File.separator+
+            "main"+
+            File.separator+
+            "java"+
+            File.separator+
+            "ru"+
+            File.separator+
+            "javarush"+
+            File.separator+
+            "drogunov"+
+            File.separator+
+            "text"+
+            File.separator;
 
     //TODO Не забыть занести путь в константы
 
@@ -36,4 +73,6 @@ public class Constants {
 
         return allChars;
     }
+
+
 }

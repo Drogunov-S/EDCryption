@@ -1,5 +1,7 @@
 package ru.javarush.drogunov.data;
 
+import ru.javarush.drogunov.exceptions.AppExceptions;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,34 +15,28 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import static ru.javarush.drogunov.constant.Constants.TXT_FOLDER;
+
 /*
  * Класс из потока создает массив чаров и возвращает его
  *
  * */
 
-
 public class DataInput {
 
-    private Path path;
-
-    //Проход названия файла
-    public DataInput(String fileName) {
-
-    }
 
     public static char[] read(String path) {
-        char[] charFileToArray = null;
-        //Не забыть перенести в константы
-        //Path path3 = Path.of("D:\\file2.txt");
-        Path path3 = Path.of(path);
+        Path pathInputToFile = Path.of(TXT_FOLDER + path);
 
-        try (FileChannel fileChannel = FileChannel.open(path3, StandardOpenOption.READ, StandardOpenOption.WRITE)) {
-            ByteBuffer buffer = ByteBuffer.allocate((int) Files.size(path3));
+        char[] charFileToArray = null;
+
+        try (FileChannel fileChannel = FileChannel.open(pathInputToFile, StandardOpenOption.READ, StandardOpenOption.WRITE)) {
+            ByteBuffer buffer = ByteBuffer.allocate((int) Files.size(pathInputToFile));
             fileChannel.read(buffer);
             charFileToArray = new String(buffer.array(), StandardCharsets.UTF_8).toCharArray();
         } catch (IOException e) {
-            e.printStackTrace();
-            //написать и бросить исключение!!!!!!!
+            throw new AppExceptions("Ошибка имени файла для чтения", e);
+            //TODO Бросить исключение файл не найден если входящий файл введен не верно
         }
 
         return charFileToArray;

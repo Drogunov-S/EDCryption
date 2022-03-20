@@ -4,7 +4,7 @@ import ru.javarush.drogunov.data.DataInput;
 import ru.javarush.drogunov.data.DataOutput;
 import ru.javarush.drogunov.enity.*;
 
-public class Decoder implements Action {
+public class Encode implements Action {
 
 
     @Override
@@ -16,7 +16,7 @@ public class Decoder implements Action {
         DataOutput dataOutput = new DataOutput(parameters[1]);
         dataOutput.write(outputText);
 
-        return new Result("Decode all right", ResultCode.OK);
+        return new Result("Encode all right", ResultCode.OK);
     }
 
 
