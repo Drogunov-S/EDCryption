@@ -9,7 +9,6 @@ public class ConsoleRunner {
 
     public static void main(String[] args) {
 
-//        System.out.println(DataInput.readToHashSet(TOP_WORDS.toAbsolutePath()));
 
         long timeStart = System.nanoTime();
 

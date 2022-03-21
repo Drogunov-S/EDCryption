@@ -3,7 +3,7 @@ package ru.javarush.drogunov.enity;
 public class Result {
 
     private final String massage;
-    private int key;
+    private int key = -1;
     private final ResultCode resultCode;
 
 
@@ -18,13 +18,19 @@ public class Result {
         this.key = intKey;
     }
 
-
     @Override
     public String toString() {
-        return "Result{" +
-                "massage='" + massage + '\'' +
-                ", key=" + key +
-                ", resultCode=" + resultCode +
-                '}';
+        if (key > 0) {
+            return "Result{" +
+                    "massage='" + massage + '\'' +
+                    ", key=" + key +
+                    ", resultCode=" + resultCode +
+                    '}';
+        } else {
+            return "Result{" +
+                    "massage='" + massage + '\'' +
+                    ", resultCode=" + resultCode +
+                    '}';
+        }
     }
 }

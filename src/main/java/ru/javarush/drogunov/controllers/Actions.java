@@ -25,7 +25,11 @@ public enum Actions {
     }
 
     public static Action find(String actionName) {
-        //TODO Реализовать проверку написания BruteForce
+        //TODO Как лучше написать проверку ввода?
+        if (actionName.equalsIgnoreCase("BruteForce")) {
+            actionName = "Brute_Force";
+        }
+
         try {
             Actions value = Actions.valueOf((actionName.toUpperCase()));
             return value.action;

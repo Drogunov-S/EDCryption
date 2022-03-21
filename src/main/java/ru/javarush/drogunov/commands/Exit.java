@@ -4,7 +4,6 @@ import ru.javarush.drogunov.enity.Result;
 import ru.javarush.drogunov.enity.ResultCode;
 
 public class Exit implements ActionExit{
-    boolean exitLoop = true;
 
 
     //TODO Вот тут получается не очень красиво, сделать отдельный интерфейс? или как разделить их?

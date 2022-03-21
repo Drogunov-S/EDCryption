@@ -23,7 +23,6 @@ public class Constants {
 
     public static final String ALL = RUS + ENG + SYMBOLS;
     public static final int SIZE_ALL = ALL.length();
-    //TODO Как сделать динамическую ссылку, а то из-за того что переместил файл TopRusWord путь сломался
     public static final Path TOP_WORDS = Path.of("src"+
             File.separator+
             "main"+
@@ -60,7 +59,6 @@ public class Constants {
             "text"+
             File.separator;
 
-    //TODO Не забыть занести путь в константы
 
     public static ArrayList<Character> listCharsAlphabet(String... constants) {
         ArrayList<Character> allChars = new ArrayList<>();

@@ -36,7 +36,6 @@ public class DataInput {
             charFileToArray = new String(buffer.array(), StandardCharsets.UTF_8).toCharArray();
         } catch (IOException e) {
             throw new AppExceptions("Ошибка имени файла для чтения", e);
-            //TODO Бросить исключение файл не найден если входящий файл введен не верно
         }
 
         return charFileToArray;
@@ -54,8 +53,7 @@ public class DataInput {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
-            //написать и бросить исключение!!!!!!!
+            throw new AppExceptions("Ошибка преобразования в HashSet", e);
         }
 
         return topWord;
@@ -72,8 +70,8 @@ public class DataInput {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
-            //написать и бросить исключение!!!!!!!
+            throw new AppExceptions("Ошибка преобразования в ArrayList", e);
+
         }
 
         return topWord;
