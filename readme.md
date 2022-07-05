@@ -1,1 +1,3 @@
-project for JavaRush 
+# EDCryption
+
+This is a training project
